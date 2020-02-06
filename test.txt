@@ -2,3 +2,64 @@ Useful tutorial links:
 
 https://pre-commit.com/
 https://ljvmiranda921.github.io/notebook/2018/06/21/precommits-using-black-and-flake8/
+
+Step-by-step Guidelines:
+1. clone the repository folder to git (your PC)
+>> git clone ...  # clone your github folder to git folder
+2. install pre-commit (at .git/):
+>> pip install pre-commit
+3. add pre-commit to requirements.txt
+#in requirements.txt file
+pre-commit
+4. Define .pre-commit-config.yaml with the hooks you want to include
+#in .pre-commit-config.yaml
+repos:
+-   repo: https://github.com/ambv/black
+    rev: stable
+    hooks:
+    - id: black
+      language_version: python3.6
+-   repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v1.2.3
+    hooks:
+    - id: flake8
+5. configure .toml file for configuring black
+#in .toml
+[tool.black]
+line-length = 79
+include = '\.pyi?$'
+exclude = '''
+/(
+    \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | _build
+  | buck-out
+  | build
+  | dist
+)/
+'''
+6. configure .flake8 file for configuring flake8
+#in .flake8
+[flake8]
+ignore = E203, E266, E501, W503, F403, F401
+max-line-length = 79
+max-complexity = 18
+select = B,C,E,F,W,T4,B9
+7. git add .
+8. git commit -m "uploads the configuration files"
+9. execute pre-commit install to install git hooks in your .git/ directory
+10. create sample test.py file to test the pre-commit
+11. git add .
+12. git commit -m "test test.py file" # it should show some errors and made the necessary changes
+13. git status # to see what have been modified  
+14. git add .  # add the modified files
+15. git commit -m "commit the updated files" # it should show passed for both black and flake8
+16. git push origin master
+
+
+
+
+
