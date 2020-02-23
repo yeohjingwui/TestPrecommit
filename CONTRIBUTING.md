@@ -91,3 +91,15 @@ Navigate to your fork of the project at the browser, there will be a "Compare & 
 Press the button! This will link you to the original project repository. 
 Press the "Create pull request" button at the bottom and wait for review by the maintainers. 
 
+## Feature Requests
+Feature requests are welcome. Please do so before submitting:
+* Check if the feature has already been requested.
+* Ensure your idea fits with the scope and aims of the project.
+* Please provide details (i.e. explaining the use case (merits of the feature))
+
+## Issue Tracker
+The issue tracker is the preferred channel for [bug reports](#bugs), and [features requests](#features), but please respect the following restrictions:
+
+* Never use the issue tracker for personal support requests (use [Stack Overflow](http://stackoverflow.com)).
+* Keep the discussion on topic and respect the opinions of others.
+
